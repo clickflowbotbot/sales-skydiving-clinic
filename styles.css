@@ -232,6 +232,17 @@ section {
     margin-bottom: 1.5rem;
 }
 
+.about-image-container {
+    position: relative;
+}
+
+.about-image-container img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: block;
+}
+
 /* Testimonials */
 .testimonial-grid {
     display: grid;
@@ -241,8 +252,9 @@ section {
 
 .testimonial {
     padding: 2.5rem;
-    background: var(--bg-light);
+    background: white;
     border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .stars {
@@ -334,6 +346,9 @@ footer {
     section {
         padding: 60px 1.5rem;
     }
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
 }
 
 .mobile-menu {
@@ -347,10 +362,29 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    z-index: 999;
 }
 
 .mobile-menu.active {
     display: flex;
+}
+
+/* Flush sections and background formatting */
+html, body { margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+section, header, footer, nav { margin: 0; }
+#hero, #cta-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+#hero { min-height: 100vh; }
+#cta-banner { min-height: 60vh; }
+@media (max-width: 767px) {
+  #hero { min-height: 70vh !important; }
+  #cta-banner { min-height: 50vh !important; }
+  #hero, #cta-banner { background-position: center center !important; }
 }
 
 /* ══ Guardrail: flush sections, background-image coverage ══ */

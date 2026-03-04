@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Simple Scroll Animation for Cards
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll('.card, .about-image-container');
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -56,8 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
+                const navHeight = 70;
                 window.scrollTo({
-                    top: target.offsetTop - 70,
+                    top: target.offsetTop - navHeight,
                     behavior: 'smooth'
                 });
             }
