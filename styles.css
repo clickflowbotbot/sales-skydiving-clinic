@@ -104,7 +104,6 @@ section {
 
 /* Hero */
 #hero {
-    height: 100vh;
     min-height: 100vh;
     background-image: url('https://ytttxtzoazhogljousvc.supabase.co/storage/v1/object/public/site-assets/81c3a5c3-9219-4fa9-8746-dbff7837aafa/hero-background.png');
     background-size: cover;
@@ -331,7 +330,25 @@ footer {
     color: #888;
 }
 
-/* Mobile Adjustments */
+.mobile-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 2rem;
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+/* Responsive and Guardrail Adjustments */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -353,25 +370,6 @@ footer {
     }
 }
 
-.mobile-menu {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 2rem;
-    display: none;
-    flex-direction: column;
-    gap: 1.5rem;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-    z-index: 999;
-}
-
-.mobile-menu.active {
-    display: flex;
-}
-
-/* Guardrail additions */
 html, body {
     margin: 0;
     padding: 0;
@@ -381,13 +379,7 @@ html, body {
     box-sizing: border-box;
 }
 
-section, header, footer, nav {
-    margin: 0;
-}
-
 #hero, #cta-banner {
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     margin: 0;
 }
@@ -396,13 +388,12 @@ section, header, footer, nav {
     #hero {
         min-height: 70vh !important;
         background-attachment: scroll;
+        background-size: cover;
     }
     #cta-banner {
         min-height: 50vh !important;
         background-attachment: scroll;
-    }
-    #hero, #cta-banner {
-        background-position: center center !important;
+        background-size: cover;
     }
 }
 
