@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple Scroll Animation for Cards
-    const cards = document.querySelectorAll('.card, .about-image-container');
+    // Animation for Cards and Gallery Items
+    const animatedElements = document.querySelectorAll('.card, .about-image-container, .gallery-item');
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease-out';
-        observer.observe(card);
+    animatedElements.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'all 0.6s ease-out';
+        observer.observe(item);
     });
 
     // Sticky Nav Opacity
@@ -54,7 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
             if (target) {
                 const navHeight = 70;
                 window.scrollTo({
