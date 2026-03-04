@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.scrollY > 100) {
             nav.style.background = 'rgba(255, 255, 255, 0.98)';
         } else {
-            nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            nav.style.background = 'rgba(255, 255, 255, 1)';
         }
     });
 

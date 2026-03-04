@@ -105,8 +105,8 @@ section {
 /* Hero */
 #hero {
     height: 100vh;
-    min-height: 700px;
-    background-image: url('https://ytttxtzoazhogljousvc.supabase.co/storage/v1/object/public/site-assets/81c3a5c3-9219-4fa9-8746-dbff7837aafa/hero.png');
+    min-height: 100vh;
+    background-image: url('https://ytttxtzoazhogljousvc.supabase.co/storage/v1/object/public/site-assets/81c3a5c3-9219-4fa9-8746-dbff7837aafa/hero-background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -123,7 +123,7 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6));
 }
 
 .hero-content {
@@ -137,6 +137,7 @@ section {
     line-height: 1.1;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    font-weight: 800;
 }
 
 #hero p {
@@ -288,6 +289,7 @@ section {
     position: relative;
     z-index: 2;
     max-width: 700px;
+    padding: 0 1.5rem;
 }
 
 .cta-content h2 {
@@ -369,30 +371,47 @@ footer {
     display: flex;
 }
 
-/* Flush sections and background formatting */
-html, body { margin: 0; padding: 0; }
-*, *::before, *::after { box-sizing: border-box; }
-section, header, footer, nav { margin: 0; }
-#hero, #cta-banner {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-}
-#hero { min-height: 100vh; }
-#cta-banner { min-height: 60vh; }
-@media (max-width: 767px) {
-  #hero { min-height: 70vh !important; }
-  #cta-banner { min-height: 50vh !important; }
-  #hero, #cta-banner { background-position: center center !important; }
+/* Guardrail additions */
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
-/* ══ Guardrail: flush sections, background-image coverage ══ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+section, header, footer, nav {
+    margin: 0;
+}
+
+#hero, #cta-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    #hero {
+        min-height: 70vh !important;
+        background-attachment: scroll;
+    }
+    #cta-banner {
+        min-height: 50vh !important;
+        background-attachment: scroll;
+    }
+    #hero, #cta-banner {
+        background-position: center center !important;
+    }
+}
+
+/* ══ Guardrail: flush sections, background-image sizing ══ */
 html, body { margin: 0; padding: 0; }
 *, *::before, *::after { box-sizing: border-box; }
 section, header, footer, nav { margin: 0; }
 #hero, #cta-banner {
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
@@ -402,5 +421,4 @@ section, header, footer, nav { margin: 0; }
 @media (max-width: 767px) {
   #hero { min-height: 70vh !important; }
   #cta-banner { min-height: 50vh !important; }
-  #hero, #cta-banner { background-position: center center !important; }
 }
